@@ -2,8 +2,8 @@ package com.techipster.siscomercial.domain.enums;
 
 public enum TipoCliente {
 
-	PESSOAFISICA(100, "Pessoa Física"),
-	PESSOAJURIDICA(200, "Pessoa Juridica");
+	PESSOAFISICA(1, "Pessoa Física"),
+	PESSOAJURIDICA(2, "Pessoa Juridica");
 	
 	private int cod;
 	private String descricao;
