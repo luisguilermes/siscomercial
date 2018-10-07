@@ -53,6 +53,14 @@ public class Pedido implements Serializable{
 		this.enderecoDeEntrega = enderecoDeEntrega;
 	}
 
+	public Double getValorTotal() {
+		double soma = 0.0;
+		for (ItemPedido ip : itens) {
+			soma += ip.getSubTotal();
+		}
+		return soma;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -124,6 +132,12 @@ public class Pedido implements Serializable{
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Pedido [id=" + id + ", instante=" + instante + ", pagamento=" + pagamento.getId() + ", cliente=" + cliente.getNome()
+				+ ", enderecoDeEntrega=" + enderecoDeEntrega.getId() + ", itens=" + itens + "]";
 	}
 	
 	
